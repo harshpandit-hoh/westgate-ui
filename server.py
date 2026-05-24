@@ -371,6 +371,6 @@ def agent_version():
 def static_files(filename):
     return send_from_directory(BASE_DIR, filename)
 
-
 if __name__ == "__main__":
-    app.run(host=os.getenv("HOST", "127.0.0.1"), port=int(os.getenv("PORT", "5000")), debug=True)
+    # Changing the default fallback from 127.0.0.1 to 0.0.0.0
+    app.run(host=os.getenv("HOST", "0.0.0.0"), port=int(os.getenv("PORT", "5000")), debug=True)
